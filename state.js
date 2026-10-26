@@ -22,6 +22,7 @@ function initState() {
         bossesDefeated: Array(LEVELS.length).fill(false),
         roomsPerLevel: Array(LEVELS.length).fill(0),
         lastNarrative: "",
+        deathMessageKey: null,
         deathEchoes: last && last.roomsPerLevel
             ? last.roomsPerLevel
                 .map((r, i) => r > 0 ? { level: i, roomInLevel: r } : null)

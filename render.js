@@ -299,6 +299,9 @@ function applyLanguage() {
     if (typeof updateUI === "function") updateUI();
     // Refresh death screen text if it's visible.
     if (document.getElementById("game-over").classList.contains("show")) {
+        if (state.deathMessageKey) {
+            document.getElementById("death-msg").textContent = t(state.deathMessageKey);
+        }
         if (typeof renderDeathStats === "function") renderDeathStats();
     }
     // Refresh language toggle button text.

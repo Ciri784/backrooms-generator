@@ -42,7 +42,8 @@ function checkGameOver() {
             "death.cause2",
             "death.cause3",
         ];
-        document.getElementById("death-msg").textContent = t(pick(msgs));
+        state.deathMessageKey = pick(msgs);
+        document.getElementById("death-msg").textContent = t(state.deathMessageKey);
         const lv = getCurrentLevel();
         const lvName = lv ? t("level." + lv.num + ".name") : t("death.unnamed");
         const cause = state.currentBoss
