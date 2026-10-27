@@ -138,7 +138,7 @@ function generateRoomDesc() {
         ? state.visitedRoomSignatures.filter(s => s === sig).length
         : 0;
     if (seenCount >= 2 && Math.random() < 0.30) {
-        return `You are in a ${pick(sizes)} ${pick(types)}. ${t(pick(details))}`;
+        return `You are in a ${pick(sizes)} ${pick(types)}. ${t(pick(echoKeys))}`;
     }
     return `You are in a ${pick(sizes)} ${pick(types)}. ${t(pick(details))}`;
 }
