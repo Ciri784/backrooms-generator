@@ -290,8 +290,8 @@ function environmentEvent(action) {
             nt("env.success", [action.toLowerCase(), ev.success], "item");
         }
     } else {
-        nt("env.fail", [action.toLowerCase(), ev.wrong, damage], "event");
-        state.stability = clamp(state.stability - damage, 0, 100);
+        nt("env.fail", [action.toLowerCase(), ev.wrong, ev.damage], "event");
+        state.stability = clamp(state.stability - ev.damage, 0, 100);
     }
     state.currentEnvEvent = null;
     state.inEncounter = false;
@@ -368,9 +368,9 @@ function bossEncounter(action) {
         `;
         updateUI();
     } else {
-        nt("boss.fail", [action, bossName, damage], "entity");
+        nt("boss.fail", [action, bossName, boss.damage], "entity");
         if (window.Audio) window.Audio.entityHit();
-        state.stability = clamp(state.stability - damage, 0, 100);
+        state.stability = clamp(state.stability - boss.damage, 0, 100);
         state.observedBoss = null;
         updateUI();
         if (checkGameOver()) {
