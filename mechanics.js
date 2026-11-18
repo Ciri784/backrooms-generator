@@ -278,6 +278,7 @@ function environmentEvent(action) {
     if (!ev) return;
     if (action === ev.safe) {
         state.escaped++;
+        state.lastEnvironmentChoice = action.toLowerCase();
         if (ev.reward && state.inventory.length < MAX_INVENTORY) {
             const item = ITEMS.find(i => i.id === ev.reward);
             if (item) {
@@ -352,6 +353,7 @@ function bossEncounter(action) {
     if (state.observedBoss === bossName) escapeChance += 0.10;
     if (chance(escapeChance)) {
         state.escaped++;
+        state.lastEntityEscape = { name: entityName, action: action.toLowerCase() };
         state.bossesDefeated[state.level] = true;
         nt("boss.escape", [action, bossName], "");
         if (window.Audio) window.Audio.bossDefeat();
@@ -462,7 +464,15 @@ function spawnDoorChoice() {
     state.inEncounter = true;
     state.pendingDoor = true;
     const doorDescKeys = ["door.appear0", "door.appear1", "door.appear2", "door.appear3", "door.appear4"];
-    narrative(t(pick(doorDescKeys)), "event");
+    let doorText = t(pick(doorDescKeys));
+    if (state.lastEntityEscape) {
+        doorText += "\n\n" + t("door.survivalEcho", state.lastEntityEscape.action, state.lastEntityEscape.name);
+        state.lastEntityEscape = null;
+    } else if (state.lastEnvironmentChoice) {
+        doorText += "\n\n" + t("door.environmentEcho", state.lastEnvironmentChoice);
+        state.lastEnvironmentChoice = null;
+    }
+    narrative(doorText, "event");
     document.getElementById("actions").innerHTML = `
         <button class="action-btn" onclick="openDoor()">${t("btn.open")}</button>
         <button class="action-btn" onclick="ignoreDoor()">${t("btn.ignore")}</button>

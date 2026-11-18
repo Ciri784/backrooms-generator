@@ -19,6 +19,7 @@ function initState() {
         currentEntity: null, inEncounter: false, inTransition: false,
         currentBoss: null, inBossEncounter: false,
         currentEnvEvent: null,
+        lastEntityEscape: null, lastEnvironmentChoice: null,
         bossesDefeated: Array(LEVELS.length).fill(false),
         roomsPerLevel: Array(LEVELS.length).fill(0),
         lastNarrative: "",
