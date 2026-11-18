@@ -194,9 +194,10 @@
             overflow-x: auto;
         }
 
-        #narrative.event { border-left-color: #d45050; }
-        #narrative.item { border-left-color: #50d450; }
-        #narrative.entity { border-left-color: #d45050; }
+        #narrative.event { border-left-color: #d45050; background: linear-gradient(90deg, rgba(212,80,80,0.14), rgba(0,0,0,0.5) 42%); }
+        #narrative.item { border-left-color: #50d450; background: linear-gradient(90deg, rgba(80,212,80,0.11), rgba(0,0,0,0.5) 42%); }
+        #narrative.entity { border-left-color: #d45050; background: linear-gradient(90deg, rgba(212,80,80,0.18), rgba(0,0,0,0.5) 52%); color: #e6dbb6; }
+        #narrative.boss { border-left-color: #d45050; background: linear-gradient(90deg, rgba(212,80,80,0.24), rgba(0,0,0,0.5) 60%); color: #fff0d0; }
         #narrative.room-still { color: #a8a28a; text-shadow: 0 0 4px rgba(180, 170, 130, 0.15); animation: still-drift 6s ease-in-out infinite; }
         @keyframes still-drift { 0%,100% { opacity: 0.92; } 50% { opacity: 1; } }
 
@@ -432,7 +433,7 @@
         </div>
 
         <div id="main-area">
-            <div id="narrative">You wake up somewhere you shouldn't be. Yellow light flickers above. The air smells wrong. You need to find a way out.</div>
+            <div id="narrative" aria-live="polite">You wake up somewhere you shouldn't be. Yellow light flickers above. The air smells wrong. You need to find a way out.</div>
 
             <div id="inventory-panel">
                 <h3 id="inventory-h">INVENTORY</h3>

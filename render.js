@@ -217,10 +217,14 @@ function renderInventory() {
         if (item) {
             slot.className = `inv-slot ${item.cssClass || ''}`;
             slot.innerHTML = `<span class="item-name">${t("item." + item.id + ".name")}</span><span class="item-desc">${t("item." + item.id + ".desc")}</span>`;
+            slot.title = `${t("item." + item.id + ".name")}: ${t("item." + item.id + ".desc")}`;
+            slot.setAttribute("aria-label", slot.title);
             slot.onclick = () => useItem(i);
         } else {
             slot.className = 'inv-slot empty';
             slot.innerHTML = '';
+            slot.removeAttribute("title");
+            slot.removeAttribute("aria-label");
             slot.onclick = null;
         }
     });
