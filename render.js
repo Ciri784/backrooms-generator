@@ -232,6 +232,7 @@ function renderDeathStats() {
     const recEl = document.getElementById("death-record");
     const statsEl = document.getElementById("death-stats");
     const wordsEl = document.getElementById("death-lastwords");
+    const lessonEl = document.getElementById("death-lesson");
     if (last) {
         const lvName = (typeof getLevelName === "function") ? t("level." + last.level + ".name") : "";
         recEl.textContent = t("death.lastRun", last.level, lvName, last.rooms, last.cause);
@@ -244,6 +245,7 @@ function renderDeathStats() {
         recEl.textContent = "";
         wordsEl.textContent = "";
     }
+    lessonEl.textContent = t("death.lesson");
     const key = agg.totalDeaths === 1 ? "death.lifetimeSingular" : "death.lifetimePlural";
     statsEl.textContent = t(key, agg.totalDeaths, agg.bestLevel, agg.totalEscaped);
 }
@@ -251,6 +253,7 @@ function renderDeathStats() {
 function forgetRecords() {
     try { localStorage.removeItem(RECORDS_KEY); } catch (e) {}
     document.getElementById("death-record").textContent = "";
+    document.getElementById("death-lesson").textContent = "";
     document.getElementById("death-stats").textContent = t("death.recordsForgotten");
 }
 
