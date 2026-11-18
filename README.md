@@ -2,6 +2,8 @@
 
 > You shouldn't have come here.
 
+互動入口：<https://ciri784.github.io/backrooms-generator/>（房間／實體生成器）與 <https://ciri784.github.io/backrooms-generator/game.html>（文字生存模式）。
+
 A generator that creates liminal space descriptions. Inspired by the Backrooms, Kane Pixels, and the uncanny feeling of familiar spaces becoming wrong.
 
 ## Live Demo
