@@ -46,6 +46,13 @@ Navigate through **9 levels** of the Backrooms (Level 0–8). Each level has dif
 **Persistent Death Records:**
 Last 10 deaths + lifetime stats are stored in `localStorage`. Next run opens with a fragment of memory: where you died, your last words, the rooms you cleared per level. Cleared via **FORGET EVERYTHING** on the death screen.
 
+## Latest update — 2026-11-18
+
+- First choices now explain the difference between moving, searching, hiding, and holding still without revealing a guaranteed answer.
+- Death records preserve a short survival prompt, so a failed run leaves a clue instead of only a reset button.
+- A successful encounter or environmental choice can echo at the next door; the building remembers what worked.
+- Event, item, entity, and boss text now have distinct visual treatment. Inventory entries also expose their use through a native label for easier inspection.
+
 ## Unsettling Mechanics
 
 The game has six small mechanics designed to make you question what the architecture is doing — or whether you are.
@@ -54,7 +61,7 @@ The game has six small mechanics designed to make you question what the architec
 - **Entity Memory** — Meet the same entity twice in a run. Its description shifts ("Its eyes know you better now"), and your escape chance drops. The third time you meet it, it has been waiting.
 - **Echo Room** — Re-enter a room you've been in before. 30% chance it renders with a subtle difference: a chair that wasn't there, a light fixture angled differently, a scuff mark on the wall. The building, or you, has shifted.
 - **NARRATOR FAULT** — When your Stability is high (>70), the narrative occasionally contradicts itself. "You turn left. There is no left." "Your shadow points a different direction than you do." Fires on 5% of narrative beats, outside scripted transitions.
-- **Doors** — On 20% of rooms, a door appears. Open it (+10 Stability, but the room signatures get scrambled and 40% chance of an entity on the other side). Ignore it, and the next entity you meet in that level references the door behind you.
+- **Doors** — On 20% of rooms, a door appears. Open it (+10 Stability, but the room signatures get scrambled and 40% chance of an entity on the other side). Ignore it, and the next entity you meet in that level references the door behind you. Surviving a prior threat can also leave an echo at the next door.
 - **Level 9: THE LOBBY YOU REMEMBER** — After Level 7, the floor shifts one more time. You arrive at a room you've been in before. The window is locked from the outside. Through the glass you can see the room you woke up in. The light is on. Someone is still there. The boss is **Yourself**. SPEAK is the safe action.
 
 ## Levels
