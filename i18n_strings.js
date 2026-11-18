@@ -39,6 +39,7 @@ I18N.en = {
 
     // ---- Intro ----
     "intro.wake": "You wake up somewhere you shouldn't be. Yellow light flickers above. The air smells wrong. You need to find a way out.",
+    "intro.guidance": "MOVE changes the room. SEARCH may find proof that helps later. HIDE and HOLD STILL are not the same answer — watch what the room is asking before you choose.",
 
     // ---- Item use ----
     "item.useFlashlight": "You equip {0}.\n\nWretches will fear you. Escape chance +25%.",
@@ -180,6 +181,7 @@ I18N.zhTW = {
     "btn.moveToward": "走向它",
 
     "intro.wake": "你在不該醒來的地方醒來。頭頂的黃色燈管閃爍著。空氣聞起來不對勁。你得找到出路。",
+    "intro.guidance": "前進會改變房間；搜索可能找到之後能救命的證物。躲藏和靜止不動不是同一個答案——先看清楚房間在要求你做什麼。",
 
     "item.useFlashlight": "你裝備了 {0}。\n\n流浪者會怕你。逃脫率 +25%。",
     "item.usePainkillers": "你使用了 {0}。\n\n下一次遭遇的穩定度損失減少 {1}%。",

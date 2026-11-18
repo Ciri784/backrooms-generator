@@ -534,7 +534,7 @@ function startGame() {
     updateUI();
     const last = getLastRecord();
     const agg = getAggregate();
-    let opening = t("intro.wake") + "\n\nExplore carefully. Find items. Avoid entities. Survive.";
+    let opening = t("intro.wake") + "\n\n" + t("intro.guidance");
     let prefix = "";
     if (last) {
         const lvName = getLevelName ? t("level." + last.level + ".name") : ("LEVEL " + last.level);
